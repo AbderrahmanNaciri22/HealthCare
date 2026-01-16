@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    
+    <div>
+        <nav class="nav">
+            <ul >
+                <li>Formulaire est evenment js</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main">
+        <button onclick="ModalAjouter()">
+            Ajouter une nouvelle demande
+        </button>
+    </div>
+    <div class="TableDIv" >
+        <table >
+            <thead>
+                <th>Nom</th>
+                <th>Telephone</th>
+                <th>Motif</th>
+                <th>Date</th>
+                <th>Action</th>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <td>Martin Dupont</td>
+                    <td>06 45 67 89 12</td>
+                    <td>Consultation</td>
+                    <td>20/09/2025</td>
+                    <td><button>Delet</button> <button>Modifer</button></td>
+                </tr>
+                  <tr>
+                    <td>Martin Dupont</td>
+                    <td>06 45 67 89 12</td>
+                    <td>Consultation</td>
+                    <td>20/09/2025</td>
+                </tr>
+                 
+                
+            </tbody>
+        </table>
+    </div>
+
+
+    
+       <div class="overlay" id="overlay">
+        <div class="ModalAjouter" id="ModalAjouter">
+            <div class="forminp">
+                <label>Nom :</label>
+                <input type="text" id="nom">
+            </div>
+
+            <div class="forminp">
+                <label>Prenom :</label>
+                <input type="text" id="prenom">
+            </div>
+
+            <div class="forminp">
+                <label>Telephone :</label>
+                <input type="text" id="tele">
+            </div>
+
+            <div class="forminp">
+                <label>Email :</label>
+                <input type="text" id="email">
+            </div>
+
+            <div class="forminp">
+                <label>Motif :</label>
+                <input type="text" id="motif">
+            </div>
+
+            <div class="forminp">
+                <label>Date :</label>
+                <input type="date" id="date">
+            </div>
+            <div id="action">
+                <button class="submit" id="submit" onclick="Ajouter()">Ajouter la Demande</button>
+                 <button class="table" onclick="Close()">close</button>
+            </div>
+
+
+        </div>
+        </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
