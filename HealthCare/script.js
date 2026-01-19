@@ -87,8 +87,22 @@ function ModiferPerssone(id){
 }
 function Ajouter(){
 
-
-   let perssone = {
+   if(nom.value == "" ||prenom.value ==""||tele.value == "" ||  email.value == "" || motif.value =="" || date.value == ""){
+      if(nom.value == ""){
+         nom.style.border ="1px solid red";
+      }else if(prenom.value == ""){
+         prenom.style.border ="1px solid red";
+      }else if(tele.value == ""){
+         tele.style.border ="1px solid red";
+      }else if(email.value == ""){
+         email.style.border ="1px solid red";
+      }else if(motif.value =="" ){
+         motif.style.border ="1px solid red";
+      }else if(date.value =="" ){
+         date.style.border ="1px solid red";
+      }
+   }else{
+    let perssone = {
     nom:nom.value,
     prenom:prenom.value,
     telephone:tele.value,
@@ -110,6 +124,8 @@ function Ajouter(){
    date.value =""
 
    loadperssones()
+   }
+  
 }
 
 function loadperssones(){
