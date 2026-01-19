@@ -6,7 +6,8 @@ let perssones = [];
    let motif = document.getElementById("motif");
    let date = document.getElementById("date");
    let submit = document.getElementById("action");
-
+   let currentPage = 1;       
+   let rowsPerPage = 5; 
 function ModalAjouter(){
       nom.value = "";
    prenom.value ="";
@@ -112,11 +113,40 @@ function Ajouter(){
 }
 
 function loadperssones(){
-   table = document.getElementById("tableBody");
+   const table = document.getElementById("tableBody");
    table.innerHTML = "";
    let perssones = loadFromLocal();
-   perssones.forEach((perssone,index) => {
-      table.innerHTML += `<tr><td>${perssone.nom} ${perssone.prenom}</td><td>${perssone.telephone}</td><td>${perssone.motif}</td><td>${perssone.motif}</td><td><button class="DeletBtn" onclick="Delet(${index})" >Delet</button> <button class="ModiferBtn" onclick="ModiferModal(${index})" >Modifer</button></td></tr>`;
+
+   const start = (currentPage - 1) * rowsPerPage;
+   const end = start + rowsPerPage;
+   const paginatedData = perssones.slice(start, end);
+
+   paginatedData.forEach((perssone, index) => {
+      table.innerHTML += `<tr>
+         <td>${perssone.nom} ${perssone.prenom}</td>
+         <td>${perssone.telephone}</td>
+         <td>${perssone.motif}</td>
+         <td>${perssone.date}</td>
+         <td>
+            <button class="DeletBtn" onclick="Delet(${start + index})">Delet</button>
+            <button class="ModiferBtn" onclick="ModiferModal(${start + index})">Modifer</button>
+         </td>
+      </tr>`;
    });
+
+
+   const totalPages = Math.ceil(perssones.length / rowsPerPage);
+   document.getElementById("prevBtn").disabled = currentPage === 1;
+   document.getElementById("nextBtn").disabled = currentPage === totalPages || totalPages === 0;
+}
+
+function nextPage() {
+
+    currentPage++;
+    loadperssones();
+}
+function prevPage() {
+    currentPage--;
+    loadperssones();
 }
 loadperssones()
