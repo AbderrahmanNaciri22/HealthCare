@@ -9,7 +9,7 @@ let perssones = [];
    let currentPage = 1;       
    let rowsPerPage = 5; 
 function ModalAjouter(){
-      nom.value = "";
+   nom.value = "";
    prenom.value ="";
    tele.value = "";
    email.value = ""
