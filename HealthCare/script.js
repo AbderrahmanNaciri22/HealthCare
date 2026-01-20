@@ -24,6 +24,7 @@ function ModalAjouter(){
    ModalAjouter.style.display = "block";
    overlay = document.getElementById("overlay");
    overlay.style.display = "block";
+   submit.innerHTML=`<button class="submit" id="submit" onclick="Ajouter()">Ajouter la Demande</button><button class="table" onclick="Close()">close</button>`
 
 
 }
@@ -32,6 +33,7 @@ function Close(){
    ModalAjouter = document.getElementById("ModalAjouter");
    ModalAjouter.style.display = "none";
    overlay.style.display = "none";
+
 
 }
 
@@ -85,6 +87,7 @@ function ModiferPerssone(id){
 
    saveToLocal(data)
    Close();
+   loadperssones();
    // perssones[id].nom = nom.value;
    // console.log( perssones[id].nom);
 }
