@@ -6,6 +6,8 @@ let perssones = [];
    let motif = document.getElementById("motif");
    let date = document.getElementById("date");
    let submit = document.getElementById("action");
+   let message = document.getElementById("msg");
+   let message0 = document.getElementById("message");
    let currentPage = 1;       
    let rowsPerPage = 5; 
 function ModalAjouter(){
@@ -101,6 +103,14 @@ function Ajouter(){
       }else if(date.value =="" ){
          date.style.border ="1px solid red";
       }
+        setTimeout(() => {
+      message0.style.display = "block";
+      message0.classList.add("Verify0")
+      message0.textContent = "Veuillez compléter les champs obligatoires"
+      });
+      setTimeout(() => {
+         document.getElementById("msg").style.display = "none";
+      }, 5000);
    }else{
     let perssone = {
     nom:nom.value,
@@ -122,6 +132,18 @@ function Ajouter(){
    email.value = ""
    motif.value = ""
    date.value =""
+
+ 
+  setTimeout(() => {
+    message.style.display = "block";
+    message.classList.add("Verify1")
+    message.textContent = "Demande ajoutée"
+  }, 500);
+
+
+  setTimeout(() => {
+    document.getElementById("msg").style.display = "none";
+  }, 3000);
 
    loadperssones()
    }

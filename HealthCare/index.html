@@ -19,6 +19,7 @@
         <button onclick="ModalAjouter()">
             Ajouter une nouvelle demande
         </button>
+        <div id="msg" style="display:none"></div>
     </div>
     <div class="TableDIv" >
         <table >
@@ -52,11 +53,13 @@
     <div style="margin-top:10px;">
         <button id="prevBtn" onclick="prevPage()">Previous</button>
         <button id="nextBtn" onclick="nextPage()">Next</button>
+
     </div>
 
     
        <div class="overlay" id="overlay">
         <div class="ModalAjouter" id="ModalAjouter">
+            <div id="message"></div>
             <div class="forminp">
                 <label>Nom :</label>
                 <input type="text" id="nom" required>
