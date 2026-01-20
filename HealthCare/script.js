@@ -8,6 +8,7 @@ let perssones = [];
    let submit = document.getElementById("action");
    let message = document.getElementById("msg");
    let message0 = document.getElementById("message");
+   let CountPg = document.getElementById("CountPg");
    let currentPage = 1;       
    let rowsPerPage = 5; 
 function ModalAjouter(){
@@ -176,6 +177,7 @@ function loadperssones(){
    const totalPages = Math.ceil(perssones.length / rowsPerPage);
    document.getElementById("prevBtn").disabled = currentPage === 1;
    document.getElementById("nextBtn").disabled = currentPage === totalPages || totalPages === 0;
+   CountPg.value = currentPage;
 }
 
 function nextPage() {
